@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=endge, chrome=IE8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
+    <title>Titleless Sights — Mots-clés</title>
+    <!--[if lte IE 8]><script type="text/javascript" src="http://james0zan.github.io/theme/js/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/skeleton.css" />
+    <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/theme.css" />
+    <link rel="shortcut icon" type="image/png" href="http://james0zan.github.io/favicon.png" />
+    <!--[if lte IE 8]><link rel="shortcut icon" type="image/x-icon" href="http://james0zan.github.io/favicon.ico" /><![endif]-->
+    <link rel="alternate" type="application/atom+xml"
+                           title="Titleless Sights — Flux Atom"
+                           href="http://james0zan.github.io/feeds/atom.xml" />
+      
+    <script type="text/javascript" src="http://james0zan.github.io/theme/js/microTags.js"></script>
+    <script>
+      function tag_cloud_init() {
+        var ul = document.getElementById("tag-cloud");
+        window.tagCloud = new microTags(ul, {
+          'min-size': .95,
+          'max-size': 3.5,
+          'min-angle': -8,
+          'max-angle': 8
+        });
+      }
+      if (window.addEventListener) window.addEventListener("load", tag_cloud_init, false);
+      else if (window.attachEvent) window.attachEvent("onload", tag_cloud_init);
+      else window.onload = tag_cloud_init;
+    </script>
+  </head>
+  <body>
+    <div id="page">
+      <header id="page-head">
+        <h1>
+          <a href="http://james0zan.github.io/index.html">Titleless Sights</a>
+        </h1>
+      </header>
+
+      <div id="page-body">
+        <section id="page-main" role="main">
+      <h1>Tags</h1>
+      <ul id="tag-cloud">
+            <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/journaling.html">journaling</a></li>
+            <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/parallel.html">parallel</a></li>
+            <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/algorithm.html">algorithm</a></li>
+            <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/consistency.html">consistency</a></li>
+            </ul>
+      </section> <!-- /#page-main -->
+
+        <aside id="page-side">
+          <!-- begin includes/sidebar.html -->
+          <nav>
+            <h3>Pages</h3>
+            <ul>
+              <li><a href="http://james0zan.github.io/index.html">Home</a></li>
+              <li><a href="http://james0zan.github.io/category/blog.html">Blog</a></li>
+              <li><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></li>
+            
+            </ul>
+          </nav>
+
+                    <nav>
+            <h3>Meta</h3>
+            <ul>
+            <li><a href="http://james0zan.github.io/archives.html">Archives</a></li>
+            <li><a href="http://james0zan.github.io/tags.html">Tags</a></li>
+            </ul>
+          </nav>
+          
+          <nav>
+                          
+                             <h3>Contacts</h3>
+                <ul>
+                                <li><a href="mailto:james0zan@gmail.com">Gmail</a></li>
+                                <li><a href="https://github.com/james0zan">Github</a></li>
+                                <li><a href="http://www.linkedin.com/profile/view?id=80873276">Linkedin</a></li>
+                                </ul>
+                            
+
+                              <h3>Feeds</h3>
+                <ul>
+               <li><a href="http://james0zan.github.io/feeds/atom.xml">Atom</a></li>
+               <li><a href="feeds/blog.atom.xml">Blog Feeds</a></li>
+               <li><a href="feeds/bookmark.atom.xml">Bookmark Feeds</a></li>
+               
+             </ul>
+                         </nav>
+          <!-- end includes/sidebar.html --></aside> <!-- /#page-side -->
+      </div>  <!-- /#page-body -->
+
+      <footer id="page-foot">
+        <p>
+                Powered by <a href="http://pelican.readthedocs.org">Pelican</a>; Theme from <a href="http://blog.1flow.net/">1flow team</a>.
+                </p>
+        <p><a id="github-link" href="https://github.com/james0zan/james0zan.github.io">Fork me on Github</a></p>      </footer>
+    </div> <!-- /#page -->
+      </body>
+</html>

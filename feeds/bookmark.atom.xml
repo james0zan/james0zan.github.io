@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Titleless Sights</title><link href="http://james0zan.github.io/" rel="alternate"></link><link href="http://james0zan.github.io/feeds/bookmark.atom.xml" rel="self"></link><id>http://james0zan.github.io/</id><updated>2013-04-27T00:00:00+08:00</updated><entry><title>Consistency Models Explained Briefly</title><link href="http://james0zan.github.io/consistency-models-explained-briefly.html" rel="alternate"></link><updated>2013-04-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2013-04-27:consistency-models-explained-briefly.html</id><summary type="html">&lt;p&gt;&lt;em&gt;URL:&lt;/em&gt; &lt;a class="reference external" href="http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/88"&gt;http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/88&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Consistency model, which describes how far the behavior of your multi-threaded (or distributed) system is from the ideal &amp;quot;sequential behavior&amp;quot;, belongs to the most important concepts of concurrency systems. But unfortunatly, discriptions about this topic are usually incomplete and even inconsistent with each other.&lt;/p&gt;
+&lt;p&gt;This article, as its title indicates, clearly explains all the important consistency models with vivid diagrammatic presentations, which is well worth reading.&lt;/p&gt;
+&lt;p&gt;Its main content is following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;&amp;quot;Multithreading&amp;quot; Consistency Models&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Strong Consistency aka Linearizability&lt;/li&gt;
+&lt;li&gt;Sequential Consistency&lt;/li&gt;
+&lt;li&gt;Quiescent Consistency&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;&amp;quot;Distributed&amp;quot; Consistency Models&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Eventual Consistency&lt;/li&gt;
+&lt;li&gt;Strict Consistency&lt;/li&gt;
+&lt;li&gt;Serializability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary><category term="consistency"></category></entry><entry><title>Parallel Merge Sort</title><link href="http://james0zan.github.io/parallel-merge-sort.html" rel="alternate"></link><updated>2013-04-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2013-04-27:parallel-merge-sort.html</id><summary type="html">&lt;p&gt;&lt;em&gt;URL:&lt;/em&gt; &lt;a class="reference external" href="http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/49"&gt;http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/49&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I used to think that the &amp;quot;merge&amp;quot; step of merge sort cannot be efficiently parallelized, because the fact that an element belongs to the tail of one sorted array could not even guarrantee that it won't rank first in the other sorted arrary.&lt;/p&gt;
+&lt;p&gt;But this article illustrates that we can get across this obstacle by doing some binary search in advence.&lt;/p&gt;
+&lt;p&gt;And even better, this algorithm preserves merges sort's ability to be a external sort.&lt;/p&gt;
+</summary><category term="parallel"></category><category term="algorithm"></category></entry></feed>
