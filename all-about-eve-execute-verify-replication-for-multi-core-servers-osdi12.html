@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="utf-8" />
+          <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=endge, chrome=IE8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-    <title>Titleless Sights — « parallel »</title>
+    <title>All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12 — Titleless Sights</title>
     <!--[if lte IE 8]><script type="text/javascript" src="http://james0zan.github.io/theme/js/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/skeleton.css" />
     <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/theme.css" />
@@ -13,7 +13,11 @@
     <link rel="alternate" type="application/atom+xml"
                            title="Titleless Sights — Flux Atom"
                            href="http://james0zan.github.io/feeds/atom.xml" />
-        </head>
+      
+    <meta name="author"   content="Mingxing Zhang" />
+    <meta name="keywords" content="replica, parallel" />
+    <link rel="stylesheet" media="not print" type="text/css" href="http://james0zan.github.io/theme/css/pygments.css" />
+  </head>
   <body>
     <div id="page">
       <header id="page-head">
@@ -23,26 +27,23 @@
       </header>
 
       <div id="page-body">
-        <section id="page-main" role="main">
-      <h1 class="small-title">« parallel » :</h1>
-
-               <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/all-about-eve-execute-verify-replication-for-multi-core-servers-osdi12.html"
-               title="Lien permanent vers «All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12»">
-               All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
+        <article class="post" id="page-main" role="main">
+      <header class="post-header">
+        <h1>
+          <a rel="bookmark"
+             href="http://james0zan.github.io/all-about-eve-execute-verify-replication-for-multi-core-servers-osdi12.html"
+             title="Lien permanent vers «All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12»">
+             All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12
+          </a>
+        </h1>
+        <div class="meta">
+          <!-- includes/article_meta.html -->
             On <time datetime="2013-05-02T00:00:00">Gio 02 Maggio 2013</time>
             in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/replica.html">replica</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/parallel.html">parallel</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=2387903">http://dl.acm.org/citation.cfm?id=2387903</a></p>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/replica.html">replica</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/parallel.html">parallel</a></span>                      </div>
+      </header>
+      <div class="post-content">
+        <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=2387903">http://dl.acm.org/citation.cfm?id=2387903</a></p>
 <p><a class="reference external" href="http://en.wikipedia.org/wiki/State_machine_replication">State machine replication (SMR)</a> is a powerful fault tolerance technique, it enforces replicas to deterministically process the same
 sequence of requests so that they produce the same sequence of outputs.</p>
 <p>But this technique doesn't suit for parallel systems, because if different servers interleave requests’ instructions in different ways, the states and outputs of correct servers may diverge even if no faults occur. As a result, most SMR systems require servers to process requests sequentially.</p>
@@ -53,41 +54,16 @@ sequence of requests so that they produce the same sequence of outputs.</p>
 mixer reduces the likelihood of triggering latent concurrency bugs by attempting to run only unlikely-to-interfere requests in parallel; Second, Eve's execute-verify architecture allows Eve to detect and recover when concurrency causes executions to diverge.</p>
 <p>In their experiments, Eve achieves a 2.6x ~ 6.5x speedup over traditional sequential execution replica and at most 4.7x speedup over the <a class="reference external" href="http://dl.acm.org/citation.cfm?id=1387601">Remus primary-backup system</a>. It also finds new concurrency bugs in H2 database.</p>
 
-        </div>
-
-        
-      </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/parallel-merge-sort.html"
-               title="Lien permanent vers «Parallel Merge Sort»">
-               Parallel Merge Sort
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2013-04-27T00:00:00">Sab 27 Aprile 2013</time>
+      </div>
+      <footer class="post-footer">
+        <div class="meta">
+          <!-- includes/article_meta.html -->
+            On <time datetime="2013-05-02T00:00:00">Gio 02 Maggio 2013</time>
             in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/parallel.html">parallel</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/algorithm.html">algorithm</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p><em>URL:</em> <a class="reference external" href="http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/49">http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/49</a></p>
-<p>I used to think that the &quot;merge&quot; step of merge sort cannot be efficiently parallelized, because the fact that an element belongs to the tail of one sorted array could not even guarrantee that it won't rank first in the other sorted arrary.</p>
-<p>But this article illustrates that we can get across this obstacle by doing some binary search in advence.</p>
-<p>And even better, this algorithm preserves merges sort's ability to be a external sort.</p>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/replica.html">replica</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/parallel.html">parallel</a></span>                      </div>
+      </footer>
 
-        </div>
-
-        
-      </article>
-                      <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
-        <span id="first_page" class="a inactive">&#60;</span> -->
-                <span class="a active">1</span>
-               <!-- <span id="next_page" class="a inactive">&#62;</span>
-        <span id="next_page" class="a inactive">&#62;&#62;</span> -->
-        </nav>      </section> <!-- /#page-main -->
+            </article> <!-- /#page-main -->
 
         <aside id="page-side">
           <!-- begin includes/sidebar.html -->
