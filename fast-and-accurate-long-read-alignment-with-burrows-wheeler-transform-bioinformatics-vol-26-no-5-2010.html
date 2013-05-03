@@ -4,7 +4,7 @@
           <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=endge, chrome=IE8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-    <title>All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12 — Titleless Sights</title>
+    <title>Fast and accurate long-read alignment with Burrows–Wheeler transform &#64; BIOINFORMATICS Vol. 26 no. 5 2010 — Titleless Sights</title>
     <!--[if lte IE 8]><script type="text/javascript" src="http://james0zan.github.io/theme/js/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/skeleton.css" />
     <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/theme.css" />
@@ -15,7 +15,7 @@
                            href="http://james0zan.github.io/feeds/atom.xml" />
       
     <meta name="author"   content="Mingxing Zhang" />
-    <meta name="keywords" content="replica, parallel, paper" />
+    <meta name="keywords" content="bioinformatics, paper, FM-index" />
     <link rel="stylesheet" media="not print" type="text/css" href="http://james0zan.github.io/theme/css/pygments.css" />
   </head>
   <body>
@@ -31,36 +31,35 @@
       <header class="post-header">
         <h1>
           <a rel="bookmark"
-             href="http://james0zan.github.io/all-about-eve-execute-verify-replication-for-multi-core-servers-osdi12.html"
-             title="Lien permanent vers «All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12»">
-             All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12
+             href="http://james0zan.github.io/fast-and-accurate-long-read-alignment-with-burrows-wheeler-transform-bioinformatics-vol-26-no-5-2010.html"
+             title="Lien permanent vers «Fast and accurate long-read alignment with Burrows–Wheeler transform &#64; BIOINFORMATICS Vol. 26 no. 5 2010»">
+             Fast and accurate long-read alignment with Burrows–Wheeler transform &#64; BIOINFORMATICS Vol. 26 no. 5 2010
           </a>
         </h1>
         <div class="meta">
           <!-- includes/article_meta.html -->
-            On <time datetime="2013-05-02T00:00:00">Gio 02 Maggio 2013</time>
+            On <time datetime="2013-05-03T00:00:00">Ven 03 Maggio 2013</time>
             in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/replica.html">replica</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/parallel.html">parallel</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>                      </div>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/bioinformatics.html">bioinformatics</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/fm-index.html">FM-index</a></span>                      </div>
       </header>
       <div class="post-content">
-        <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=2387903">http://dl.acm.org/citation.cfm?id=2387903</a></p>
-<p><a class="reference external" href="http://en.wikipedia.org/wiki/State_machine_replication">State machine replication (SMR)</a> is a powerful fault tolerance technique, it enforces replicas to deterministically process the same
-sequence of requests so that they produce the same sequence of outputs.</p>
-<p>But this technique doesn't suit for parallel systems, because if different servers interleave requests’ instructions in different ways, the states and outputs of correct servers may diverge even if no faults occur. As a result, most SMR systems require servers to process requests sequentially.</p>
-<p>In contrast, Eve partitions requests in batches and allows different replicas to execute requests within each batch in parallel. After each batch, it speculates that whether the results of these parallel executions (i.e. the system’s important state and output at each replica) will match across enough replicas.  If such a correct state/output can be identified, Eve makes those incorrect replicas issue an incremental state transfer request to other replicas (by leveraging  a <a class="reference external" href="http://en.wikipedia.org/wiki/Merkle_signature_scheme">Merkle tree</a>). However, if too many replicas diverge so that the correct state/output cannot be identified, Eve guarantees safety and liveness by rolling back and sequentially and deterministically re-executing the requests.</p>
-<p>Since diverges will seriously impair Eve's performance, it uses a <em>mixer</em> stage to apply
-<strong>application-specific</strong> criteria to produce groups of requests that are unlikely to interfere.</p>
-<p>As a side effect, Eve is especially useful in tolerating concurrency bugs. First, Eve’s
-mixer reduces the likelihood of triggering latent concurrency bugs by attempting to run only unlikely-to-interfere requests in parallel; Second, Eve's execute-verify architecture allows Eve to detect and recover when concurrency causes executions to diverge.</p>
-<p>In their experiments, Eve achieves a 2.6x ~ 6.5x speedup over traditional sequential execution replica and at most 4.7x speedup over the <a class="reference external" href="http://dl.acm.org/citation.cfm?id=1387601">Remus primary-backup system</a>. It also finds new concurrency bugs in H2 database.</p>
+        <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=1741825">http://dl.acm.org/citation.cfm?id=1741825</a></p>
+<p>A new generation of faster methods to find DNA sequence matches was developed since 2000. They are tailored for short (&lt;100 bp) reads alignment and 10–1000 times faster than general algorithms, such as BLAST. However, reads coming from the new sequencing technologies are not short any more, which makes efficiently aligning long reads against a long reference sequence a new challenge to the development of alignment tools.</p>
+<p>This paper presents Burrows-Wheeler Aligner’s Smith-Waterman Alignment (BWA-SW), a novel algorithm to align long sequences up to 1Mb against a large sequence database (e.g. the human genome) with a few gigabytes of memory. The algorithm is as accurate as SSAHA2, more accurate than BLAST, and is several to tens of times faster than both.</p>
+<p>Similar to other algorithm papers, if you are familiar with the background, it’s easy for you to grasp the core algorithm within a few minutes. So I will just recommend several supporting material here:</p>
+<ul class="simple">
+<li>First, Heng Li et al.'s previous paper <a class="reference external" href="http://dl.acm.org/citation.cfm?id=1576130">&quot;Fast and accurate short read alignment with Burrows–Wheeler transform&quot;</a> gives a more detailed explanation of the building blocks of this algorithm, such as Prefix trie and Burrows–Wheeler transform. It is a good idea to read this paper in advance.</li>
+<li>Second, if you still have trouble in understanding how FM-index works, there is an excellent diagrammatic presentation in Alex's post <a class="reference external" href="http://alexbowe.com/fm-index/">&quot;FM-Indexes and Backwards Search&quot;</a>.</li>
+<li>Finally, if you have no idea what is &quot;read alignment&quot; but still interesting in this exquisite application of FM-index. You can read these two slides [<a class="reference external" href="http://www.cs.helsinki.fi/bioinformatiikka/mbi/courses/07-08/itb/slides/itb0708_slides_83-116.pdf">1</a>, <a class="reference external" href="http://www.cs.helsinki.fi/bioinformatiikka/mbi/courses/07-08/itb/slides/itb0708_slides_117-142.pdf">2</a>] at first.</li>
+</ul>
 
       </div>
       <footer class="post-footer">
         <div class="meta">
           <!-- includes/article_meta.html -->
-            On <time datetime="2013-05-02T00:00:00">Gio 02 Maggio 2013</time>
+            On <time datetime="2013-05-03T00:00:00">Ven 03 Maggio 2013</time>
             in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/replica.html">replica</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/parallel.html">parallel</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>                      </div>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/bioinformatics.html">bioinformatics</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/fm-index.html">FM-index</a></span>                      </div>
       </footer>
 
             </article> <!-- /#page-main -->
