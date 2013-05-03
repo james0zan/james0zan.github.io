@@ -60,6 +60,36 @@
         <header class="post-header">
           <h1>
             <a rel="bookmark"
+               href="http://james0zan.github.io/production-run-software-failure-diagnosis-via-hardware-performance-counters-asplos13.html"
+               title="Lien permanent vers «Production-Run Software Failure Diagnosis via Hardware Performance Counters  &#64; ASPLOS'13»">
+               Production-Run Software Failure Diagnosis via Hardware Performance Counters  &#64; ASPLOS'13
+            </a>
+          </h1>
+          <div class="meta">
+            <!-- includes/article_meta.html -->
+            On <time datetime="2013-05-03T00:00:00">Ven 03 Maggio 2013</time>
+            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/concurrency-bug.html">concurrency bug</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>                        </div>
+        </header>
+        <div class="post-content">
+          <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=2451128">http://dl.acm.org/citation.cfm?id=2451128</a></p>
+<p>This paper presents PBI, a system that uses existing hardware performance counters to diagnose production-run failures caused by sequential and concurrency bugs with low overhead (&lt; 10%).</p>
+<p>Firstly, we must notice that this tool is used to diagnose bugs, not detect or prevent bugs during production runs. This purpose enables PBI to leverage some kinds of statistical methods. As a consequence, you must collect enough failure runs before diagnosing it, which usually requests that you should know how to trigger the bug.</p>
+<p>Then, personally, I think the most important observation in this paper is: a wide variety of common software bugs can be reflected by a small portion of hardware events supported by hardware performance counters.</p>
+<ul class="simple">
+<li>For concurrency bugs, those events are cache-coherence events (state change in <a class="reference external" href="http://en.wikipedia.org/wiki/MESI_protocol">MESI protocol</a>). For example, the I-predicate and S-predicate can differentiate failure runs from success runs for all 4 types of atomicity violations. More detailed discussions can be found in Sec. 3.1.2.</li>
+<li>For sequential bugs, PBI use branch-related events, because many semantic bugs are related to wrong control flows.</li>
+</ul>
+<p>This paper also proposes a statistical method to identify which events are highly correlated with failure runs.</p>
+
+        </div>
+
+        
+      </article>
+                      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
                href="http://james0zan.github.io/all-about-eve-execute-verify-replication-for-multi-core-servers-osdi12.html"
                title="Lien permanent vers «All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12»">
                All about Eve: Execute-Verify Replication for Multi-Core Servers &#64; OSDI'12
@@ -176,36 +206,6 @@ mixer reduces the likelihood of triggering latent concurrency bugs by attempting
 <p>I used to think that the &quot;merge&quot; step of merge sort cannot be efficiently parallelized, because the fact that an element belongs to the tail of one sorted array could not even guarrantee that it won't rank first in the other sorted arrary.</p>
 <p>But this article illustrates that we can get across this obstacle by doing some binary search in advence.</p>
 <p>And even better, this algorithm preserves merges sort's ability to be a external sort.</p>
-
-        </div>
-
-        
-      </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/production-run-software-failure-diagnosis-via-hardware-performance-counters-asplos13.html"
-               title="Lien permanent vers «Production-Run Software Failure Diagnosis via Hardware Performance Counters  &#64; ASPLOS'13»">
-               Production-Run Software Failure Diagnosis via Hardware Performance Counters  &#64; ASPLOS'13
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2012-05-03T00:00:00">Gio 03 Maggio 2012</time>
-            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/concurrency-bug.html">concurrency bug</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=2451128">http://dl.acm.org/citation.cfm?id=2451128</a></p>
-<p>This paper presents PBI, a system that uses existing hardware performance counters to diagnose production-run failures caused by sequential and concurrency bugs with low overhead (&lt; 10%).</p>
-<p>Firstly, we must notice that this tool is used to diagnose bugs, not detect or prevent bugs during production runs. This purpose enables PBI to leverage some kinds of statistical methods. As a consequence, you must collect enough failure runs before diagnosing it, which usually requests that you should know how to trigger the bug.</p>
-<p>Then, personally, I think the most important observation in this paper is: a wide variety of common software bugs can be reflected by a small portion of hardware events supported by hardware performance counters.</p>
-<ul class="simple">
-<li>For concurrency bugs, those events are cache-coherence events (state change in <a class="reference external" href="http://en.wikipedia.org/wiki/MESI_protocol">MESI protocol</a>). For example, the I-predicate and S-predicate can differentiate failure runs from success runs for all 4 types of atomicity violations. More detailed discussions can be found in Sec. 3.1.2.</li>
-<li>For sequential bugs, PBI use branch-related events, because many semantic bugs are related to wrong control flows.</li>
-</ul>
-<p>This paper also proposes a statistical method to identify which events are highly correlated with failure runs.</p>
 
         </div>
 
