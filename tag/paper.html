@@ -30,6 +30,41 @@
         <header class="post-header">
           <h1>
             <a rel="bookmark"
+               href="http://james0zan.github.io/memory-barriers-a-hardware-view-for-software-hackers.html"
+               title="Lien permanent vers «Memory Barriers: a Hardware View for Software Hackers»">
+               Memory Barriers: a Hardware View for Software Hackers
+            </a>
+          </h1>
+          <div class="meta">
+            <!-- includes/article_meta.html -->
+            On <time datetime="2013-06-07T00:00:00">Ven 07 Giugno 2013</time>
+            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/cache.html">cache</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>                        </div>
+        </header>
+        <div class="post-content">
+          <p><em>URL:</em> <a class="reference external" href="http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.07.23a.pdf">http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.07.23a.pdf</a></p>
+<p>This paper gives a clear explanation on techniques for increasing cache utilization,
+and justify the existence of memory barriers as a necessary evil that
+is required to enable good performance and scalability.</p>
+<p>Its general structure is as follows:</p>
+<ol class="arabic simple">
+<li>Presents the structure of a cache;</li>
+<li>Explains how cache-coherency protocols ensure that different per-CPU caches coordinate with each other;</li>
+<li>Describes a technique called &quot;store buﬀer&quot;, which can be used to ease the performance loss caused by invalidate-acknowledgement message passing.</li>
+<li>Gives an example on why write memory barriers are needed -- Store buﬀers will reorder the execution of instructions to achieve better performance but we need methods to ensure some critical orders will not be undermined;</li>
+<li>Outlines another technique named &quot;invalidate queue&quot; for making invalidate-acknowledgement messages arrive more quickly.</li>
+<li>Gives a corresponding example on why read memory barriers are needed -- Invalidate queues will cause another kind of reordering which can be prevented by read memory barriers.</li>
+</ol>
+<p>The paper also gives many quizzes and discussions on real implementations (e.g. ARM, IA64).</p>
+
+        </div>
+
+        
+      </article>
+                      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
                href="http://james0zan.github.io/fast-and-accurate-long-read-alignment-with-burrows-wheeler-transform-bioinformatics-vol-26-no-5-2010.html"
                title="Lien permanent vers «Fast and accurate long-read alignment with Burrows–Wheeler transform &#64; BIOINFORMATICS Vol. 26 no. 5 2010»">
                Fast and accurate long-read alignment with Burrows–Wheeler transform &#64; BIOINFORMATICS Vol. 26 no. 5 2010
