@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="utf-8" />
+          <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=endge, chrome=IE8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-    <title>Titleless Sights — «Blog»</title>
+    <title>DEF CON CTF Qualifier 2013 OMGACM 4 Writeup — Titleless Sights</title>
     <!--[if lte IE 8]><script type="text/javascript" src="http://james0zan.github.io/theme/js/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/skeleton.css" />
     <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/theme.css" />
@@ -13,7 +13,11 @@
     <link rel="alternate" type="application/atom+xml"
                            title="Titleless Sights — Flux Atom"
                            href="http://james0zan.github.io/feeds/atom.xml" />
-        </head>
+      
+    <meta name="author"   content="Mingxing Zhang" />
+    <meta name="keywords" content="DEFCON, algorithm" />
+    <link rel="stylesheet" media="not print" type="text/css" href="http://james0zan.github.io/theme/css/pygments.css" />
+  </head>
   <body>
     <div id="page">
       <header id="page-head">
@@ -23,51 +27,23 @@
       </header>
 
       <div id="page-body">
-        <section id="page-main" role="main">
-      <h1 class="small-title">«Blog» :</h1>
-
-               <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/start-blogging-now.html"
-               title="Lien permanent vers «Start Blogging Now»">
-               Start Blogging Now
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2013-04-27T00:00:00">Sab 27 Aprile 2013</time>
-            in <em><a href="http://james0zan.github.io/category/blog.html">Blog</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/journaling.html">journaling</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p>Inspired and encoraged by Nathan Marz's posts [<a class="reference external" href="http://nathanmarz.com/blog/you-should-blog-even-if-you-have-no-readers.html">1</a>, <a class="reference external" href="http://nathanmarz.com/blog/break-into-silicon-valley-with-a-blog-1.html">2</a>], I made the decision to restart my blog here.
-But since I'm infected with procrastination to some extent, I may only share several interesting articles with my own comments under the &quot;<a class="reference external" href="http://james0zan.github.io/category/bookmark.html">Bookmark</a>&quot; column in the begining. I hope this will help me develop a habit of writing and sharing.</p>
-<p>Actually, I have already goten some articles under crafting, but I'm not sure when I can finish them ......</p>
-<p>Thank you for your reading, and I hope that I can see you again.</p>
-
-        </div>
-
-        
-      </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/def-con-ctf-qualifier-2013-omgacm-4-writeup.html"
-               title="Lien permanent vers «DEF CON CTF Qualifier 2013 OMGACM 4 Writeup»">
-               DEF CON CTF Qualifier 2013 OMGACM 4 Writeup
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
+        <article class="post" id="page-main" role="main">
+      <header class="post-header">
+        <h1>
+          <a rel="bookmark"
+             href="http://james0zan.github.io/def-con-ctf-qualifier-2013-omgacm-4-writeup.html"
+             title="Lien permanent vers «DEF CON CTF Qualifier 2013 OMGACM 4 Writeup»">
+             DEF CON CTF Qualifier 2013 OMGACM 4 Writeup
+          </a>
+        </h1>
+        <div class="meta">
+          <!-- includes/article_meta.html -->
             On <time datetime="2012-06-18T00:00:00">Lun 18 Giugno 2012</time>
             in <em><a href="http://james0zan.github.io/category/blog.html">Blog</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/defcon.html">DEFCON</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/algorithm.html">algorithm</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <h1>Crossposting</h1>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/defcon.html">DEFCON</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/algorithm.html">algorithm</a></span>                      </div>
+      </header>
+      <div class="post-content">
+        <h1>Crossposting</h1>
 <p>This artical is also cross-posted in <a href="http://www.blue-lotus.net/">blue-lotus</a>'s offical blog at <a href="http://www.blue-lotus.net/def-con-ctf-qualifier-2013-omgacm-4-writeup/">here</a>.</p>
 <h1>Problem Description</h1>
 <p>Each problem gives you a circuit board, which will have a dimension, a set of nulls (that trace cannot go through), a feed point, and a set of antenna points.</p>
@@ -368,16 +344,16 @@ And if one trace encounters with another trace before reaching the feed point, w
 <h1>Result</h1>
 <p>You can check out <a href="http://ascii.io/a/3644">http://ascii.io/a/3644</a> for the result.</p>
 <p><strong>CAVEAT:</strong> We use many heuristics in the program, so it will not guarantee success for every run.</p>
-        </div>
+      </div>
+      <footer class="post-footer">
+        <div class="meta">
+          <!-- includes/article_meta.html -->
+            On <time datetime="2012-06-18T00:00:00">Lun 18 Giugno 2012</time>
+            in <em><a href="http://james0zan.github.io/category/blog.html">Blog</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/defcon.html">DEFCON</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/algorithm.html">algorithm</a></span>                      </div>
+      </footer>
 
-        
-      </article>
-                      <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
-        <span id="first_page" class="a inactive">&#60;</span> -->
-                <span class="a active">1</span>
-               <!-- <span id="next_page" class="a inactive">&#62;</span>
-        <span id="next_page" class="a inactive">&#62;&#62;</span> -->
-        </nav>      </section> <!-- /#page-main -->
+            </article> <!-- /#page-main -->
 
         <aside id="page-side">
           <!-- begin includes/sidebar.html -->
