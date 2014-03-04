@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Titleless Sights</title><link href="http://james0zan.github.io/" rel="alternate"></link><link href="http://james0zan.github.io/feeds/pages.atom.xml" rel="self"></link><id>http://james0zan.github.io/</id><updated>2013-04-27T00:00:00+08:00</updated><entry><title>Welcome!</title><link href="http://james0zan.github.io/index.html.html" rel="alternate"></link><updated>2013-04-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2013-04-27:index.html.html</id><summary type="html">&lt;p&gt;Hello, I'm Mingxing Zhang a.k.a. james0zan.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Titleless Sights</title><link href="http://james0zan.github.io/" rel="alternate"></link><link href="http://james0zan.github.io/feeds/pages.atom.xml" rel="self"></link><id>http://james0zan.github.io/</id><updated>2014-03-03T00:00:00+08:00</updated><entry><title>Anticipating Invariant</title><link href="http://james0zan.github.io/AI.html.html" rel="alternate"></link><updated>2014-03-03T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2014-03-03:AI.html.html</id><summary type="html">&lt;div class="section" id="ai-in-brief"&gt;
+&lt;h2&gt;AI in Brief&lt;/h2&gt;
+&lt;p&gt;Concurrency bugs (CBugs) are notoriously difficult to be eradicated in the testing phase because of their non-deterministic nature,
+and the bug fixing procedure is also time-consuming and error-prone.&lt;/p&gt;
+&lt;p&gt;Thus, tolerating concurrency bugs in the production phase emerges as an attractive complementary approach.
+But unfortunately, the existing tolerating tools are usually
+1) constrained in types of bugs they can handle;
+or 2) requiring roll-back mechanism, which can hitherto not be fully achieved efficiently without hardware supports.&lt;/p&gt;
+&lt;p&gt;In contrast, the Anticipating Invariant (AI) can anticipate CBugs before any irreversible changes have been made.
+Based on it, we implemented a software-only tool to tolerate concurrency bugs on-the-fly.&lt;/p&gt;
+&lt;p&gt;The tool will restrict the program's interleaving space, such that it avoids AI-violating (i.e., potentially failure-triggering) interleavings during the production runs.
+Since AI can detect the bugs beforehand, we are able to bypass the suspicious interleavings through stalling, instead of resorting to roll-back.&lt;/p&gt;
+&lt;p&gt;To the best of our knowledge, this is the first attempt to efficiently tolerate previously unknown order and atomicity violations at run time without using rollback.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="paper"&gt;
+&lt;h2&gt;Paper&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;Mingxing Zhang&lt;/strong&gt;, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. &lt;a class="reference external" href="https://drive.google.com/file/d/0B3UfopnW1Nh_cWdmVWlrbE8zaGs/edit?usp=sharing"&gt;AI: Lightweight Approach for Tolerating Concurrency Bugs&lt;/a&gt;. Submitted for publication&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="software"&gt;
+&lt;h2&gt;Software&lt;/h2&gt;
+&lt;p&gt;You can download and try AI at &lt;a class="reference external" href="https://github.com/james0zan/AI"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In the package, we present:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;the source code of our LLVM-based AI implementation;&lt;/li&gt;
+&lt;li&gt;several demos for demonstrating AI's ability of tolerating CBugs;&lt;/li&gt;
+&lt;li&gt;applications from different categories (desktop, server, HPC) for evaluating AI's overhead;&lt;/li&gt;
+&lt;li&gt;an example of the APIs' usage.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Documentations, screencasts and some auxiliary scripts are also provided.&lt;/p&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Welcome!</title><link href="http://james0zan.github.io/index.html.html" rel="alternate"></link><updated>2013-04-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2013-04-27:index.html.html</id><summary type="html">&lt;p&gt;Hello, I'm Mingxing Zhang a.k.a. james0zan.&lt;/p&gt;
 &lt;p&gt;Currently, I am a 2nd year Ph.D. student in &lt;a class="reference external" href="http://madsys.cs.tsinghua.edu.cn/en/"&gt;MadSys Group&lt;/a&gt; &amp;#64; Tsinghua University, and my research interests lie in distributed and parallel systems. You can refer to my &lt;a class="reference external" href="http://madsys.cs.tsinghua.edu.cn/~zhangmx/"&gt;homepage&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;p&gt;Thank you for visiting. The blog is &lt;a class="reference external" href="category/blog.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
 </summary></entry></feed>

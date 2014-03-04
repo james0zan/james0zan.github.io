@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=endge, chrome=IE8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
     <title>Titleless Sights — Articles de Mingxing Zhang</title>
@@ -13,7 +13,7 @@
     <link rel="alternate" type="application/atom+xml"
                            title="Titleless Sights — Flux Atom"
                            href="http://james0zan.github.io/feeds/atom.xml" />
-        </head>
+  </head>
   <body>
     <div id="page">
       <header id="page-head">
@@ -26,7 +26,208 @@
         <section id="page-main" role="main">
       <h1 class="small-title">Articles de <i>Mingxing Zhang</i> :</h1>
 
-               <article class="post">
+      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
+               href="http://james0zan.github.io/AI.html.html"
+               title="Lien permanent vers «Anticipating Invariant»">
+               Anticipating Invariant
+            </a>
+          </h1>
+          <div class="meta">
+<!-- includes/article_meta.html -->
+            On <time datetime="2014-03-03T00:00:00">Lun 03 Marzo 2014</time>
+            in <em><a href="http://james0zan.github.io/category/pages.html">Pages</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>          </div>
+        </header>
+        <div class="post-content">
+          <div class="section" id="ai-in-brief">
+<h2>AI in Brief</h2>
+<p>Concurrency bugs (CBugs) are notoriously difficult to be eradicated in the testing phase because of their non-deterministic nature,
+and the bug fixing procedure is also time-consuming and error-prone.</p>
+<p>Thus, tolerating concurrency bugs in the production phase emerges as an attractive complementary approach.
+But unfortunately, the existing tolerating tools are usually
+1) constrained in types of bugs they can handle;
+or 2) requiring roll-back mechanism, which can hitherto not be fully achieved efficiently without hardware supports.</p>
+<p>In contrast, the Anticipating Invariant (AI) can anticipate CBugs before any irreversible changes have been made.
+Based on it, we implemented a software-only tool to tolerate concurrency bugs on-the-fly.</p>
+<p>The tool will restrict the program's interleaving space, such that it avoids AI-violating (i.e., potentially failure-triggering) interleavings during the production runs.
+Since AI can detect the bugs beforehand, we are able to bypass the suspicious interleavings through stalling, instead of resorting to roll-back.</p>
+<p>To the best of our knowledge, this is the first attempt to efficiently tolerate previously unknown order and atomicity violations at run time without using rollback.</p>
+</div>
+<div class="section" id="paper">
+<h2>Paper</h2>
+<ul class="simple">
+<li><strong>Mingxing Zhang</strong>, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. <a class="reference external" href="https://drive.google.com/file/d/0B3UfopnW1Nh_cWdmVWlrbE8zaGs/edit?usp=sharing">AI: Lightweight Approach for Tolerating Concurrency Bugs</a>. Submitted for publication</li>
+</ul>
+</div>
+<div class="section" id="software">
+<h2>Software</h2>
+<p>You can download and try AI at <a class="reference external" href="https://github.com/james0zan/AI">here</a>.</p>
+<p>In the package, we present:</p>
+<ol class="arabic simple">
+<li>the source code of our LLVM-based AI implementation;</li>
+<li>several demos for demonstrating AI's ability of tolerating CBugs;</li>
+<li>applications from different categories (desktop, server, HPC) for evaluating AI's overhead;</li>
+<li>an example of the APIs' usage.</li>
+</ol>
+<p>Documentations, screencasts and some auxiliary scripts are also provided.</p>
+</div>
+
+        </div>
+
+
+      </article>
+      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
+               href="http://james0zan.github.io/memory-barriers-a-hardware-view-for-software-hackers.html"
+               title="Lien permanent vers «Memory Barriers: a Hardware View for Software Hackers»">
+               Memory Barriers: a Hardware View for Software Hackers
+            </a>
+          </h1>
+          <div class="meta">
+<!-- includes/article_meta.html -->
+            On <time datetime="2013-06-07T00:00:00">Ven 07 Giugno 2013</time>
+            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/cache.html">cache</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>          </div>
+        </header>
+        <div class="post-content">
+          <p><em>URL:</em> <a class="reference external" href="http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.07.23a.pdf">http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.07.23a.pdf</a></p>
+<p>This paper gives a clear explanation on techniques for increasing cache utilization,
+and justify the existence of memory barriers as a necessary evil that
+is required to enable good performance and scalability.</p>
+<p>Its general structure is as follows:</p>
+<ol class="arabic simple">
+<li>Presents the structure of a cache;</li>
+<li>Explains how cache-coherency protocols ensure that different per-CPU caches coordinate with each other;</li>
+<li>Describes a technique called &quot;store buﬀer&quot;, which can be used to ease the performance loss caused by invalidate-acknowledgement message passing.</li>
+<li>Gives an example on why write memory barriers are needed -- Store buﬀers will reorder the execution of instructions to achieve better performance but we need methods to ensure some critical orders will not be undermined;</li>
+<li>Outlines another technique named &quot;invalidate queue&quot; for making invalidate-acknowledgement messages arrive more quickly.</li>
+<li>Gives a corresponding example on why read memory barriers are needed -- Invalidate queues will cause another kind of reordering which can be prevented by read memory barriers.</li>
+</ol>
+<p>The paper also gives many quizzes and discussions on real implementations (e.g. ARM, IA64).</p>
+
+        </div>
+
+
+      </article>
+      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
+               href="http://james0zan.github.io/scalable-event-multiplexing-epoll-vs-kqueue.html"
+               title="Lien permanent vers «Scalable Event Multiplexing: epoll vs. kqueue»">
+               Scalable Event Multiplexing: epoll vs. kqueue
+            </a>
+          </h1>
+          <div class="meta">
+<!-- includes/article_meta.html -->
+            On <time datetime="2013-05-16T00:00:00">Gio 16 Maggio 2013</time>
+            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/epoll.html">epoll</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/kqueue.html">kqueue</a></span>          </div>
+        </header>
+        <div class="post-content">
+          <p><em>URL:</em> <a class="reference external" href="http://www.eecs.berkeley.edu/~sangjin/2012/12/21/epoll-vs-kqueue.html">http://www.eecs.berkeley.edu/~sangjin/2012/12/21/epoll-vs-kqueue.html</a></p>
+<p>This article gives a fairly good review on common event multiplexing techniques, especially the difference between epoll (in Linux) and kqueue (in BSD).</p>
+<p>There are also some interesting anecdotes enclosed in the post, such as:</p>
+<ul class="simple">
+<li>Stateful event multiplexing techniques (epoll, kqueue) are derived from the <a class="reference external" href="http://static.usenix.org/event/usenix99/full_papers/banga/banga.pdf">paper</a> by Banga et al, published at USENIX ATC 1999.</li>
+<li>kqueue is technically superior to epoll.</li>
+<li>It is often quoted that “In Unix, everything is a file”, but it is not always true.</li>
+</ul>
+
+        </div>
+
+
+      </article>
+      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
+               href="http://james0zan.github.io/pitfalls-of-object-oriented-programming.html"
+               title="Lien permanent vers «Pitfalls of Object Oriented Programming»">
+               Pitfalls of Object Oriented Programming
+            </a>
+          </h1>
+          <div class="meta">
+<!-- includes/article_meta.html -->
+            On <time datetime="2013-05-15T00:00:00">Mer 15 Maggio 2013</time>
+            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/cache.html">cache</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/oo.html">OO</a></span>          </div>
+        </header>
+        <div class="post-content">
+          <p><em>URL:</em> <a class="reference external" href="http://research.scee.net/files/presentations/gcapaustralia09/Pitfalls_of_Object_Oriented_Programming_GCAP_09.pdf">http://research.scee.net/files/presentations/gcapaustralia09/Pitfalls_of_Object_Oriented_Programming_GCAP_09.pdf</a></p>
+<p>Since the time consumed by a single CPU cycle is much lesser than RAM latency in nowadays, it becomes critical and profitable to better utilize the cache.</p>
+<p>In this slide, Tony Albrecht states that with modern hardware, excessive encapsulation in OO is BAD. According to the principle of OOP, an instantiated object will generally contain all data associated with it. But when we only need a small portion of its fileds during the calculation there may be a lot of avoidable cache misses.</p>
+
+        </div>
+
+
+      </article>
+      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
+               href="http://james0zan.github.io/fast-and-accurate-long-read-alignment-with-burrows-wheeler-transform-bioinformatics-vol-26-no-5-2010.html"
+               title="Lien permanent vers «Fast and accurate long-read alignment with Burrows–Wheeler transform &#64; BIOINFORMATICS Vol. 26 no. 5 2010»">
+               Fast and accurate long-read alignment with Burrows–Wheeler transform &#64; BIOINFORMATICS Vol. 26 no. 5 2010
+            </a>
+          </h1>
+          <div class="meta">
+<!-- includes/article_meta.html -->
+            On <time datetime="2013-05-03T00:00:00">Ven 03 Maggio 2013</time>
+            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/bioinformatics.html">bioinformatics</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/fm-index.html">FM-index</a></span>          </div>
+        </header>
+        <div class="post-content">
+          <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=1741825">http://dl.acm.org/citation.cfm?id=1741825</a></p>
+<p>A new generation of faster methods to find DNA sequence matches was developed since 2000. They are tailored for short (&lt;100 bp) reads alignment and 10–1000 times faster than general algorithms, such as BLAST. However, reads coming from the new sequencing technologies are not short any more, which makes efficiently aligning long reads against a long reference sequence a new challenge to the development of alignment tools.</p>
+<p>This paper presents Burrows-Wheeler Aligner’s Smith-Waterman Alignment (BWA-SW), a novel algorithm to align long sequences up to 1Mb against a large sequence database (e.g. the human genome) with a few gigabytes of memory. The algorithm is as accurate as SSAHA2, more accurate than BLAST, and is several to tens of times faster than both.</p>
+<p>Similar to other algorithm papers, if you are familiar with the background, it’s easy for you to grasp the core algorithm within a few minutes. So I will just recommend several supporting material here:</p>
+<ul class="simple">
+<li>First, Heng Li et al.'s previous paper <a class="reference external" href="http://dl.acm.org/citation.cfm?id=1576130">&quot;Fast and accurate short read alignment with Burrows–Wheeler transform&quot;</a> gives a more detailed explanation of the building blocks of this algorithm, such as Prefix trie and Burrows–Wheeler transform. It is a good idea to read this paper in advance.</li>
+<li>Second, if you still have trouble in understanding how FM-index works, there is an excellent diagrammatic presentation in Alex's post <a class="reference external" href="http://alexbowe.com/fm-index/">&quot;FM-Indexes and Backwards Search&quot;</a>.</li>
+<li>Finally, if you have no idea what is &quot;read alignment&quot; but still interesting in this exquisite application of FM-index. You can read these two slides [<a class="reference external" href="http://www.cs.helsinki.fi/bioinformatiikka/mbi/courses/07-08/itb/slides/itb0708_slides_83-116.pdf">1</a>, <a class="reference external" href="http://www.cs.helsinki.fi/bioinformatiikka/mbi/courses/07-08/itb/slides/itb0708_slides_117-142.pdf">2</a>] at first.</li>
+</ul>
+
+        </div>
+
+
+      </article>
+      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
+               href="http://james0zan.github.io/production-run-software-failure-diagnosis-via-hardware-performance-counters-asplos13.html"
+               title="Lien permanent vers «Production-Run Software Failure Diagnosis via Hardware Performance Counters  &#64; ASPLOS'13»">
+               Production-Run Software Failure Diagnosis via Hardware Performance Counters  &#64; ASPLOS'13
+            </a>
+          </h1>
+          <div class="meta">
+<!-- includes/article_meta.html -->
+            On <time datetime="2013-05-03T00:00:00">Ven 03 Maggio 2013</time>
+            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/concurrency-bug.html">concurrency bug</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>          </div>
+        </header>
+        <div class="post-content">
+          <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=2451128">http://dl.acm.org/citation.cfm?id=2451128</a></p>
+<p>This paper presents PBI, a system that uses existing hardware performance counters to diagnose production-run failures caused by sequential and concurrency bugs with low overhead (&lt; 10%).</p>
+<p>Firstly, we must notice that this tool is used to diagnose bugs, not detect or prevent bugs during production runs. This purpose enables PBI to leverage some kinds of statistical methods. As a consequence, you must collect enough failure runs before diagnosing it, which usually requests that you should know how to trigger the bug.</p>
+<p>Then, personally, I think the most important observation in this paper is: a wide variety of common software bugs can be reflected by a small portion of hardware events supported by hardware performance counters.</p>
+<ul class="simple">
+<li>For concurrency bugs, those events are cache-coherence events (state change in <a class="reference external" href="http://en.wikipedia.org/wiki/MESI_protocol">MESI protocol</a>). For example, the I-predicate and S-predicate can differentiate failure runs from success runs for all 4 types of atomicity violations. More detailed discussions can be found in Sec. 3.1.2.</li>
+<li>For sequential bugs, PBI use branch-related events, because many semantic bugs are related to wrong control flows.</li>
+</ul>
+<p>This paper also proposes a statistical method to identify which events are highly correlated with failure runs.</p>
+
+        </div>
+
+
+      </article>
+      <article class="post">
         <header class="post-header">
           <h1>
             <a rel="bookmark"
@@ -36,10 +237,10 @@
             </a>
           </h1>
           <div class="meta">
-            <!-- includes/article_meta.html -->
+<!-- includes/article_meta.html -->
             On <time datetime="2013-05-02T00:00:00">Gio 02 Maggio 2013</time>
             in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/replica.html">replica</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/parallel.html">parallel</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>                        </div>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/replica.html">replica</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/parallel.html">parallel</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>          </div>
         </header>
         <div class="post-content">
           <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=2387903">http://dl.acm.org/citation.cfm?id=2387903</a></p>
@@ -55,9 +256,33 @@ mixer reduces the likelihood of triggering latent concurrency bugs by attempting
 
         </div>
 
-        
+
       </article>
-                      <article class="post">
+      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
+               href="http://james0zan.github.io/myth-eric-brewer-on-why-banks-are-base-not-acid-availability-is-revenue.html"
+               title="Lien permanent vers «Myth: Eric Brewer on Why Banks are BASE Not ACID - Availability Is Revenue»">
+               Myth: Eric Brewer on Why Banks are BASE Not ACID - Availability Is Revenue
+            </a>
+          </h1>
+          <div class="meta">
+<!-- includes/article_meta.html -->
+            On <time datetime="2013-05-02T00:00:00">Gio 02 Maggio 2013</time>
+            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/cap.html">CAP</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/base.html">BASE</a></span>          </div>
+        </header>
+        <div class="post-content">
+          <p><em>URL:</em> <a class="reference external" href="http://highscalability.com/blog/2013/5/1/myth-eric-brewer-on-why-banks-are-base-not-acid-availability.html">http://highscalability.com/blog/2013/5/1/myth-eric-brewer-on-why-banks-are-base-not-acid-availability.html</a></p>
+<p>A refutation of the myth, &quot;Money is important, so banks must use transactions to keep money safe and consistent&quot;.</p>
+<p>This fact sets the grounds of  Jeff Darcy's argument, <a class="reference external" href="http://pl.atyp.us/wordpress/index.php/2013/03/is-eventual-consistency-useful">&quot;Is Eventual Consistency Useful?&quot;</a></p>
+
+        </div>
+
+
+      </article>
+      <article class="post">
         <header class="post-header">
           <h1>
             <a rel="bookmark"
@@ -67,10 +292,10 @@ mixer reduces the likelihood of triggering latent concurrency bugs by attempting
             </a>
           </h1>
           <div class="meta">
-            <!-- includes/article_meta.html -->
+<!-- includes/article_meta.html -->
             On <time datetime="2013-04-27T00:00:00">Sab 27 Aprile 2013</time>
             in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/consistency.html">consistency</a></span>                        </div>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/consistency.html">consistency</a></span>          </div>
         </header>
         <div class="post-content">
           <p><em>URL:</em> <a class="reference external" href="http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/88">http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/88</a></p>
@@ -100,360 +325,9 @@ mixer reduces the likelihood of triggering latent concurrency bugs by attempting
 
         </div>
 
-        
+
       </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/def-con-ctf-qualifier-2013-omgacm-4-writeup.html"
-               title="Lien permanent vers «DEF CON CTF Qualifier 2013 OMGACM 4 Writeup»">
-               DEF CON CTF Qualifier 2013 OMGACM 4 Writeup
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2013-06-18T00:00:00">Mar 18 Giugno 2013</time>
-            in <em><a href="http://james0zan.github.io/category/blog.html">Blog</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/defcon.html">DEFCON</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/algorithm.html">algorithm</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <h1>Crossposting</h1>
-<p>This artical is also cross-posted in <a href="http://www.blue-lotus.net/">blue-lotus</a>'s official blog at <a href="http://www.blue-lotus.net/def-con-ctf-qualifier-2013-omgacm-4-writeup/">here</a>.</p>
-<h1>Problem Description</h1>
-<p>Each problem gives you a circuit board, which will have a dimension, a set of nulls (that trace cannot go through), a feed point, and a set of antenna points.</p>
-<p>Your goal is to draw a trace for each antenna point that starts at the feed point, ends at the antenna point and does not intersect other traces.</p>
-<p>The distance of these traces must also be equal for all antenna points.</p>
-<h1>Our Solution</h1>
-<p>Since we intuitively classify this problem as NP-Complete, we resort to iterative deepening depth-first search for solving it.</p>
-<p>In our algorithm, we choose to "grow" the traces from antenna points, which means that all the traces simultaneously start from their respective antenna point and go one step further one by one.</p>
-<p>This strategy forces that all the traces will be equal length with each other, thus many unnecessary states are avoided.<br />
-And if one trace encounters with another trace before reaching the feed point, we can simply merge them into one to eschew intersection.</p>
-<p>More specifically, in order to record the current state, we use:</p>
-<ol>
-<li>Nine bool variables for each point: one for the point and 8 for adjacent edges; </li>
-<li>One pair &lt; int, int &gt; (one for 1 and the other for sqrt 2) variable for each point to store the distance from this point to the corresponding antenna point if it has been covered by a trace; </li>
-<li>Current "growing" point for each trace; </li>
-<li>Which trace’s turn is it to grow in this iteration; </li>
-<li>The final distance, if one of the traces has reached the feed point; </li>
-</ol>
-<p>And we also use a set of pruning tricks to accelerate the algorithm.</p>
-<ol>
-<li>Iterative deepening on length of each path; </li>
-<li>Limit the depth of dfs to be at most 30. (This ought to have been another iterative deepening argument, but we hard code it with an empirical number for simplifying the code); </li>
-<li>Preprocess the minimal distance from each point to the feed point and combine this information with iterative deepening threshold for further pruning; </li>
-<li>If one of the trace has already reached the feed point, use the distance for pruning. </li>
-</ol>
-<p>Here is another tip:</p>
-<p>The intersections will not only happen at points but also in small squares, you may need to double check this.</p>
-<h1>Code</h1>
-<div class="highlight"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
-<span class="cp">#include &lt;stdlib.h&gt;</span>
-<span class="cp">#include &lt;map&gt;</span>
-<span class="cp">#include &lt;set&gt;</span>
-<span class="cp">#include &lt;vector&gt;</span>
-<span class="cp">#include &lt;queue&gt;</span>
-<span class="cp">#include &lt;string.h&gt;</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">llu</span><span class="p">;</span>
-<span class="cp">#define MAX 100</span>
-<span class="cp">#define mp make_pair</span>
-<span class="cp">#define pb push_back</span>
-
-<span class="kt">bool</span> <span class="n">Null</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">],</span> <span class="n">Null2</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">];</span>
-<span class="kt">int</span> <span class="n">XY</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">];</span>
-<span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">eN</span><span class="p">,</span> <span class="n">fX</span><span class="p">,</span> <span class="n">fY</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">UP</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">dy</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
-<span class="kt">int</span> <span class="n">dx</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">};</span>
-<span class="kt">int</span> <span class="n">verse</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
-<span class="n">set</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">S</span><span class="p">;</span>
-<span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">mp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="n">mp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">mp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="n">mp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">mp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">mp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="n">mp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-    <span class="n">mp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">};</span>
-
-<span class="k">struct</span> <span class="n">node</span> <span class="p">{</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">;</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">len</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">cnt</span><span class="p">;</span>
-    <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">ans</span><span class="p">;</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">now</span><span class="p">;</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span> <span class="o">&gt;</span> <span class="n">used</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">I</span><span class="p">;</span>
-<span class="p">};</span>
-<span class="n">node</span> <span class="n">Key</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">getLen</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">mp</span><span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">len</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">].</span><span class="n">first</span><span class="p">,</span> <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">].</span><span class="n">second</span><span class="p">)].</span><span class="n">first</span><span class="o">+</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">first</span><span class="p">,</span> 
-        <span class="n">Key</span><span class="p">.</span><span class="n">len</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">].</span><span class="n">first</span><span class="p">,</span> <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">].</span><span class="n">second</span><span class="p">)].</span><span class="n">second</span><span class="o">+</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">second</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="n">output</span><span class="p">(</span><span class="n">node</span> <span class="n">ans</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Solution %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">P</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">kk</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="o">*</span><span class="n">M</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">kk</span><span class="o">++</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">tx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">M</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">i</span> <span class="o">%</span> <span class="n">M</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">,</span> <span class="n">kk</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">kk</span><span class="p">])</span>
-                <span class="n">L</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">kk</span><span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Line %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">L</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="o">*</span><span class="n">M</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">k</span><span class="o">++</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">tx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="n">M</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">i</span> <span class="o">%</span> <span class="n">M</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">,</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
-                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Segment %d %d %d %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">tx</span><span class="o">+</span><span class="n">dx</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">ty</span><span class="o">+</span><span class="n">dy</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
-        <span class="p">}</span>
-        <span class="n">k</span><span class="o">+=</span><span class="mi">4</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">bool</span> <span class="n">none</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">eN</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">used</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="n">myabs</span><span class="p">(</span><span class="kt">int</span> <span class="n">xx</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">xx</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="o">-</span><span class="n">xx</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">xx</span><span class="p">;</span>
-<span class="p">}</span>
-
-
-<span class="kt">int</span> <span class="n">UPPER_BOUND</span> <span class="o">=</span> <span class="mi">28</span><span class="p">;</span>
-<span class="kt">void</span> <span class="nf">dfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">depth</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">depth</span> <span class="o">&gt;</span> <span class="n">UPPER_BOUND</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-
-    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">].</span><span class="n">first</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">].</span><span class="n">second</span><span class="p">;</span>
-
-    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">8</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">iii</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">iii</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span> <span class="n">iii</span><span class="o">++</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">newX</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-        <span class="kt">int</span> <span class="n">newY</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">newX</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">newX</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">newY</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">newY</span> <span class="o">&gt;=</span> <span class="n">M</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Null</span><span class="p">[</span><span class="n">newX</span><span class="p">][</span><span class="n">newY</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">XY</span><span class="p">[</span><span class="n">newX</span><span class="p">][</span><span class="n">newY</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">first</span> <span class="o">+</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">second</span> <span class="o">+</span> <span class="n">XY</span><span class="p">[</span><span class="n">newX</span><span class="p">][</span><span class="n">newY</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">UP</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span>
-                            <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">first</span> <span class="o">||</span> <span class="n">Key</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">second</span><span class="p">)</span> <span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span>
-                            <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">first</span> <span class="o">==</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">first</span> <span class="o">&amp;&amp;</span> <span class="n">Key</span><span class="p">.</span><span class="n">ans</span><span class="p">.</span><span class="n">second</span> <span class="o">==</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">second</span><span class="p">)</span> <span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">6</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">8</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">6</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">8</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="p">}</span>
-
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">newX</span> <span class="o">==</span> <span class="n">fX</span> <span class="o">&amp;&amp;</span> <span class="n">newY</span> <span class="o">==</span> <span class="n">fY</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">Key</span><span class="p">.</span><span class="n">ans</span> <span class="o">!=</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">continue</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">cnt</span><span class="o">++</span><span class="p">;</span> <span class="n">Key</span><span class="p">.</span><span class="n">ans</span> <span class="o">=</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[(</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">verse</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">used</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="n">mp</span><span class="p">(</span><span class="n">newX</span><span class="p">,</span> <span class="n">newY</span><span class="p">);</span>
-
-
-            <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">cnt</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">none</span><span class="p">())</span> <span class="p">{</span>
-                <span class="n">output</span><span class="p">(</span><span class="n">Key</span><span class="p">);</span>
-                <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-            <span class="p">}</span>
-
-            <span class="kt">int</span> <span class="n">II</span> <span class="o">=</span> <span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">,</span> <span class="n">ttt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="k">for</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">=</span><span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">eN</span><span class="p">;</span> <span class="n">ttt</span><span class="o">&lt;</span><span class="n">eN</span><span class="p">;</span> <span class="n">ttt</span><span class="o">++</span><span class="p">,</span> <span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">=</span><span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">eN</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">used</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">])</span>
-                    <span class="k">break</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">ttt</span> <span class="o">&lt;</span> <span class="n">eN</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">dfs</span><span class="p">(</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-            <span class="p">}</span>
-
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[(</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">verse</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">I</span> <span class="o">=</span> <span class="n">II</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">used</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="n">mp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">cnt</span><span class="o">--</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">newX</span><span class="p">,</span> <span class="n">newY</span><span class="p">)</span> <span class="o">*</span> <span class="mi">9</span><span class="p">])</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">len</span><span class="p">[</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">]</span> <span class="o">!=</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">continue</span><span class="p">;</span>
-
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[(</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">verse</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">used</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="n">mp</span><span class="p">(</span><span class="n">newX</span><span class="p">,</span> <span class="n">newY</span><span class="p">);</span>
-
-            <span class="kt">int</span> <span class="n">II</span> <span class="o">=</span> <span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">,</span> <span class="n">ttt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="k">for</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">=</span><span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">eN</span><span class="p">;</span> <span class="n">ttt</span><span class="o">&lt;</span><span class="n">eN</span><span class="p">;</span> <span class="n">ttt</span><span class="o">++</span><span class="p">,</span> <span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">=</span><span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">eN</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">used</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">])</span>
-                    <span class="k">break</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">ttt</span> <span class="o">&lt;</span> <span class="n">eN</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">dfs</span><span class="p">(</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-            <span class="p">}</span>
-
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[(</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">verse</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">I</span> <span class="o">=</span> <span class="n">II</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">used</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="n">mp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[(</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[(</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">verse</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">len</span><span class="p">[</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">]</span> <span class="o">=</span> <span class="n">getLen</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="n">mp</span><span class="p">(</span><span class="n">newX</span><span class="p">,</span> <span class="n">newY</span><span class="p">);</span>
-
-            <span class="kt">int</span> <span class="n">II</span> <span class="o">=</span> <span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">,</span> <span class="n">ttt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="k">for</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">=</span><span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">eN</span><span class="p">;</span> <span class="n">ttt</span><span class="o">&lt;</span><span class="n">eN</span><span class="p">;</span> <span class="n">ttt</span><span class="o">++</span><span class="p">,</span> <span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">=</span><span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">eN</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">Key</span><span class="p">.</span><span class="n">used</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">])</span>
-                    <span class="k">break</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">ttt</span> <span class="o">&lt;</span> <span class="n">eN</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">dfs</span><span class="p">(</span><span class="n">depth</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-            <span class="p">}</span>
-
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[(</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[(</span><span class="n">newX</span><span class="o">*</span><span class="n">M</span> <span class="o">+</span> <span class="n">newY</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">verse</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="mi">9</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">I</span> <span class="o">=</span> <span class="n">II</span><span class="p">;</span>
-            <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">[</span><span class="n">Key</span><span class="p">.</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="n">mp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">dfs2</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">newX</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-        <span class="kt">int</span> <span class="n">newY</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">newX</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">newX</span> <span class="o">&gt;=</span> <span class="n">N</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">newY</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">newY</span> <span class="o">&gt;=</span> <span class="n">M</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">Null</span><span class="p">[</span><span class="n">newX</span><span class="p">][</span><span class="n">newY</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
-
-        <span class="k">if</span> <span class="p">(</span><span class="n">XY</span><span class="p">[</span><span class="n">newX</span><span class="p">][</span><span class="n">newY</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">XY</span><span class="p">[</span><span class="n">newX</span><span class="p">][</span><span class="n">newY</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">XY</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
-        <span class="n">XY</span><span class="p">[</span><span class="n">newX</span><span class="p">][</span><span class="n">newY</span><span class="p">]</span> <span class="o">=</span> <span class="n">XY</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="n">dfs2</span><span class="p">(</span><span class="n">newX</span><span class="p">,</span> <span class="n">newY</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%*s%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">P</span><span class="p">);</span>
-
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%*s%*d&quot;</span><span class="p">);</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">N</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">M</span><span class="p">);</span>
-
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%*s%*d&quot;</span><span class="p">);</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">fX</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">fY</span><span class="p">);</span>
-
-
-
-    <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">M</span> <span class="o">*</span> <span class="mi">9</span><span class="p">);</span>
-    <span class="n">Key</span><span class="p">.</span><span class="n">len</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">M</span><span class="p">);</span>
-
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%*s%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">eN</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">eN</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">;</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ty</span><span class="p">);</span>
-
-        <span class="n">Key</span><span class="p">.</span><span class="n">now</span><span class="p">.</span><span class="n">pb</span><span class="p">(</span><span class="n">mp</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">));</span>
-        <span class="n">Key</span><span class="p">.</span><span class="n">t</span><span class="p">[</span><span class="n">get</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">)</span> <span class="o">*</span> <span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-        <span class="n">Key</span><span class="p">.</span><span class="n">used</span><span class="p">.</span><span class="n">pb</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="kt">int</span> <span class="n">nN</span><span class="p">;</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%*s%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nN</span><span class="p">);</span>
-    <span class="n">memset</span><span class="p">(</span><span class="n">Null</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Null</span><span class="p">));</span>
-    <span class="n">memset</span><span class="p">(</span><span class="n">Null2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">Null2</span><span class="p">));</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">nN</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">;</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tx</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ty</span><span class="p">);</span>
-        <span class="n">Null</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-        <span class="n">Null2</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="p">}</span>
-
-
-
-    <span class="n">memset</span><span class="p">(</span><span class="n">XY</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">XY</span><span class="p">));</span>
-    <span class="n">XY</span><span class="p">[</span><span class="n">fX</span><span class="p">][</span><span class="n">fY</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">dfs2</span><span class="p">(</span><span class="n">fX</span><span class="p">,</span> <span class="n">fY</span><span class="p">);</span>
-
-    <span class="n">node</span> <span class="n">base</span> <span class="o">=</span> <span class="n">Key</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">UP</span><span class="o">=</span><span class="mi">6</span><span class="p">;</span> <span class="p">;</span> <span class="n">UP</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">dfs</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-        <span class="n">Key</span> <span class="o">=</span> <span class="n">base</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">solve</span><span class="p">();</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<h1>Result</h1>
-<p>You can check out <a href="http://ascii.io/a/3644">http://ascii.io/a/3644</a> for the result.</p>
-<p><strong>CAVEAT:</strong> We use many heuristics in the program, so it will not guarantee success for every run.</p>
-        </div>
-
-        
-      </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/fast-and-accurate-long-read-alignment-with-burrows-wheeler-transform-bioinformatics-vol-26-no-5-2010.html"
-               title="Lien permanent vers «Fast and accurate long-read alignment with Burrows–Wheeler transform &#64; BIOINFORMATICS Vol. 26 no. 5 2010»">
-               Fast and accurate long-read alignment with Burrows–Wheeler transform &#64; BIOINFORMATICS Vol. 26 no. 5 2010
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2013-05-03T00:00:00">Ven 03 Maggio 2013</time>
-            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/bioinformatics.html">bioinformatics</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/fm-index.html">FM-index</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=1741825">http://dl.acm.org/citation.cfm?id=1741825</a></p>
-<p>A new generation of faster methods to find DNA sequence matches was developed since 2000. They are tailored for short (&lt;100 bp) reads alignment and 10–1000 times faster than general algorithms, such as BLAST. However, reads coming from the new sequencing technologies are not short any more, which makes efficiently aligning long reads against a long reference sequence a new challenge to the development of alignment tools.</p>
-<p>This paper presents Burrows-Wheeler Aligner’s Smith-Waterman Alignment (BWA-SW), a novel algorithm to align long sequences up to 1Mb against a large sequence database (e.g. the human genome) with a few gigabytes of memory. The algorithm is as accurate as SSAHA2, more accurate than BLAST, and is several to tens of times faster than both.</p>
-<p>Similar to other algorithm papers, if you are familiar with the background, it’s easy for you to grasp the core algorithm within a few minutes. So I will just recommend several supporting material here:</p>
-<ul class="simple">
-<li>First, Heng Li et al.'s previous paper <a class="reference external" href="http://dl.acm.org/citation.cfm?id=1576130">&quot;Fast and accurate short read alignment with Burrows–Wheeler transform&quot;</a> gives a more detailed explanation of the building blocks of this algorithm, such as Prefix trie and Burrows–Wheeler transform. It is a good idea to read this paper in advance.</li>
-<li>Second, if you still have trouble in understanding how FM-index works, there is an excellent diagrammatic presentation in Alex's post <a class="reference external" href="http://alexbowe.com/fm-index/">&quot;FM-Indexes and Backwards Search&quot;</a>.</li>
-<li>Finally, if you have no idea what is &quot;read alignment&quot; but still interesting in this exquisite application of FM-index. You can read these two slides [<a class="reference external" href="http://www.cs.helsinki.fi/bioinformatiikka/mbi/courses/07-08/itb/slides/itb0708_slides_83-116.pdf">1</a>, <a class="reference external" href="http://www.cs.helsinki.fi/bioinformatiikka/mbi/courses/07-08/itb/slides/itb0708_slides_117-142.pdf">2</a>] at first.</li>
-</ul>
-
-        </div>
-
-        
-      </article>
-                      <article class="post">
+      <article class="post">
         <header class="post-header">
           <h1>
             <a rel="bookmark"
@@ -463,7 +337,7 @@ And if one trace encounters with another trace before reaching the feed point, w
             </a>
           </h1>
           <div class="meta">
-            <!-- includes/article_meta.html -->
+<!-- includes/article_meta.html -->
             On <time datetime="2013-04-27T00:00:00">Sab 27 Aprile 2013</time>
             in <em><a href="http://james0zan.github.io/category/pages.html">Pages</a></em>
             by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>          </div>
@@ -475,153 +349,15 @@ And if one trace encounters with another trace before reaching the feed point, w
 
         </div>
 
-        
+
       </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/memory-barriers-a-hardware-view-for-software-hackers.html"
-               title="Lien permanent vers «Memory Barriers: a Hardware View for Software Hackers»">
-               Memory Barriers: a Hardware View for Software Hackers
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2013-06-07T00:00:00">Ven 07 Giugno 2013</time>
-            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/cache.html">cache</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p><em>URL:</em> <a class="reference external" href="http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.07.23a.pdf">http://www.rdrop.com/users/paulmck/scalability/paper/whymb.2010.07.23a.pdf</a></p>
-<p>This paper gives a clear explanation on techniques for increasing cache utilization,
-and justify the existence of memory barriers as a necessary evil that
-is required to enable good performance and scalability.</p>
-<p>Its general structure is as follows:</p>
-<ol class="arabic simple">
-<li>Presents the structure of a cache;</li>
-<li>Explains how cache-coherency protocols ensure that different per-CPU caches coordinate with each other;</li>
-<li>Describes a technique called &quot;store buﬀer&quot;, which can be used to ease the performance loss caused by invalidate-acknowledgement message passing.</li>
-<li>Gives an example on why write memory barriers are needed -- Store buﬀers will reorder the execution of instructions to achieve better performance but we need methods to ensure some critical orders will not be undermined;</li>
-<li>Outlines another technique named &quot;invalidate queue&quot; for making invalidate-acknowledgement messages arrive more quickly.</li>
-<li>Gives a corresponding example on why read memory barriers are needed -- Invalidate queues will cause another kind of reordering which can be prevented by read memory barriers.</li>
-</ol>
-<p>The paper also gives many quizzes and discussions on real implementations (e.g. ARM, IA64).</p>
-
-        </div>
-
-        
-      </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/myth-eric-brewer-on-why-banks-are-base-not-acid-availability-is-revenue.html"
-               title="Lien permanent vers «Myth: Eric Brewer on Why Banks are BASE Not ACID - Availability Is Revenue»">
-               Myth: Eric Brewer on Why Banks are BASE Not ACID - Availability Is Revenue
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2013-05-02T00:00:00">Gio 02 Maggio 2013</time>
-            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/cap.html">CAP</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/base.html">BASE</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p><em>URL:</em> <a class="reference external" href="http://highscalability.com/blog/2013/5/1/myth-eric-brewer-on-why-banks-are-base-not-acid-availability.html">http://highscalability.com/blog/2013/5/1/myth-eric-brewer-on-why-banks-are-base-not-acid-availability.html</a></p>
-<p>A refutation of the myth, &quot;Money is important, so banks must use transactions to keep money safe and consistent&quot;.</p>
-<p>This fact sets the grounds of  Jeff Darcy's argument, <a class="reference external" href="http://pl.atyp.us/wordpress/index.php/2013/03/is-eventual-consistency-useful">&quot;Is Eventual Consistency Useful?&quot;</a></p>
-
-        </div>
-
-        
-      </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/parallel-merge-sort.html"
-               title="Lien permanent vers «Parallel Merge Sort»">
-               Parallel Merge Sort
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2013-04-27T00:00:00">Sab 27 Aprile 2013</time>
-            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/parallel.html">parallel</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/algorithm.html">algorithm</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p><em>URL:</em> <a class="reference external" href="http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/49">http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/49</a></p>
-<p>I used to think that the &quot;merge&quot; step of merge sort cannot be efficiently parallelized, because the fact that an element belongs to the tail of one sorted array could not even guarrantee that it won't rank first in the other sorted arrary.</p>
-<p>But this article illustrates that we can get across this obstacle by doing some binary search in advence.</p>
-<p>And even better, this algorithm preserves merges sort's ability to be a external sort.</p>
-
-        </div>
-
-        
-      </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/pitfalls-of-object-oriented-programming.html"
-               title="Lien permanent vers «Pitfalls of Object Oriented Programming»">
-               Pitfalls of Object Oriented Programming
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2013-05-15T00:00:00">Mer 15 Maggio 2013</time>
-            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/cache.html">cache</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/oo.html">OO</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p><em>URL:</em> <a class="reference external" href="http://research.scee.net/files/presentations/gcapaustralia09/Pitfalls_of_Object_Oriented_Programming_GCAP_09.pdf">http://research.scee.net/files/presentations/gcapaustralia09/Pitfalls_of_Object_Oriented_Programming_GCAP_09.pdf</a></p>
-<p>Since the time consumed by a single CPU cycle is much lesser than RAM latency in nowadays, it becomes critical and profitable to better utilize the cache.</p>
-<p>In this slide, Tony Albrecht states that with modern hardware, excessive encapsulation in OO is BAD. According to the principle of OOP, an instantiated object will generally contain all data associated with it. But when we only need a small portion of its fileds during the calculation there may be a lot of avoidable cache misses.</p>
-
-        </div>
-
-        
-      </article>
-                      <article class="post">
-        <header class="post-header">
-          <h1>
-            <a rel="bookmark"
-               href="http://james0zan.github.io/production-run-software-failure-diagnosis-via-hardware-performance-counters-asplos13.html"
-               title="Lien permanent vers «Production-Run Software Failure Diagnosis via Hardware Performance Counters  &#64; ASPLOS'13»">
-               Production-Run Software Failure Diagnosis via Hardware Performance Counters  &#64; ASPLOS'13
-            </a>
-          </h1>
-          <div class="meta">
-            <!-- includes/article_meta.html -->
-            On <time datetime="2013-05-03T00:00:00">Ven 03 Maggio 2013</time>
-            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
-            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/concurrency-bug.html">concurrency bug</a></span>,                             <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/paper.html">paper</a></span>                        </div>
-        </header>
-        <div class="post-content">
-          <p><em>URL:</em> <a class="reference external" href="http://dl.acm.org/citation.cfm?id=2451128">http://dl.acm.org/citation.cfm?id=2451128</a></p>
-<p>This paper presents PBI, a system that uses existing hardware performance counters to diagnose production-run failures caused by sequential and concurrency bugs with low overhead (&lt; 10%).</p>
-<p>Firstly, we must notice that this tool is used to diagnose bugs, not detect or prevent bugs during production runs. This purpose enables PBI to leverage some kinds of statistical methods. As a consequence, you must collect enough failure runs before diagnosing it, which usually requests that you should know how to trigger the bug.</p>
-<p>Then, personally, I think the most important observation in this paper is: a wide variety of common software bugs can be reflected by a small portion of hardware events supported by hardware performance counters.</p>
-<ul class="simple">
-<li>For concurrency bugs, those events are cache-coherence events (state change in <a class="reference external" href="http://en.wikipedia.org/wiki/MESI_protocol">MESI protocol</a>). For example, the I-predicate and S-predicate can differentiate failure runs from success runs for all 4 types of atomicity violations. More detailed discussions can be found in Sec. 3.1.2.</li>
-<li>For sequential bugs, PBI use branch-related events, because many semantic bugs are related to wrong control flows.</li>
-</ul>
-<p>This paper also proposes a statistical method to identify which events are highly correlated with failure runs.</p>
-
-        </div>
-
-        
-      </article>
-                      <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
+      <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
         <span id="first_page" class="a inactive">&#60;</span> -->
-                <span class="a active">1</span>
-                    <a href="http://james0zan.github.io/author/mingxing-zhang2.html">2</a>
-                    <a id="next_page" href="http://james0zan.github.io/author/mingxing-zhang2.html">&#62;</a>
+        <span class="a active">1</span>
+        <a href="http://james0zan.github.io/author/mingxing-zhang2.html">2</a>
+        <a id="next_page" href="http://james0zan.github.io/author/mingxing-zhang2.html">&#62;</a>
         <a id="last_page" href="http://james0zan.github.io/author/mingxing-zhang2.html">&#62;&#62;</a>
-        </nav>      </section> <!-- /#page-main -->
+</nav>      </section> <!-- /#page-main -->
 
         <aside id="page-side">
           <!-- begin includes/sidebar.html -->
@@ -635,42 +371,49 @@ is required to enable good performance and scalability.</p>
             </ul>
           </nav>
 
-                    <nav>
+          <nav>
+            <h3>Projects</h3>
+            <ul>
+              <li><a href="http://james0zan.github.io/AI.html">AI</a></li>
+            </ul>
+          </nav>
+
+          <nav>
             <h3>Meta</h3>
             <ul>
             <li><a href="http://james0zan.github.io/archives.html">Archives</a></li>
             <li><a href="http://james0zan.github.io/tags.html">Tags</a></li>
             </ul>
           </nav>
-          
-          <nav>
-                          
-                             <h3>Contacts</h3>
-                <ul>
-                                <li><a href="mailto:james0zan@gmail.com">Gmail</a></li>
-                                <li><a href="https://github.com/james0zan">Github</a></li>
-                                <li><a href="http://www.linkedin.com/profile/view?id=80873276">Linkedin</a></li>
-                                </ul>
-                            
 
-                              <h3>Feeds</h3>
+          <nav>
+              
+               <h3>Contacts</h3>
+                <ul>
+                <li><a href="mailto:james0zan@gmail.com">Gmail</a></li>
+                <li><a href="https://github.com/james0zan">Github</a></li>
+                <li><a href="http://www.linkedin.com/profile/view?id=80873276">Linkedin</a></li>
+                </ul>
+              
+
+                <h3>Feeds</h3>
                 <ul>
                <li><a href="http://james0zan.github.io/feeds/atom.xml">Atom</a></li>
                <li><a href="http://james0zan.github.io/feeds/blog.atom.xml">Blog Feeds</a></li>
                <li><a href="http://james0zan.github.io/feeds/bookmark.atom.xml">Bookmark Feeds</a></li>
                
              </ul>
-                         </nav>
+          </nav>
           <!-- end includes/sidebar.html --></aside> <!-- /#page-side -->
       </div>  <!-- /#page-body -->
 
       <footer id="page-foot">
         <p>
-                Powered by <a href="http://pelican.readthedocs.org">Pelican</a>; Theme from <a href="http://blog.1flow.net/">1flow team</a>.
-                </p>
-        <p><a id="github-link" href="https://github.com/james0zan/james0zan.github.io">Fork me on Github</a></p>      </footer>
+        Powered by <a href="http://pelican.readthedocs.org">Pelican</a>; Theme from <a href="http://blog.1flow.net/">1flow team</a>.
+        </p>
+<p><a id="github-link" href="https://github.com/james0zan/james0zan.github.io">Fork me on Github</a></p>      </footer>
     </div> <!-- /#page -->
-        <script type="text/javascript">
+    <script type="text/javascript">
       var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-40495434-1']);
           _gaq.push(['_trackPageview']);
@@ -681,5 +424,5 @@ is required to enable good performance and scalability.</p>
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-      </body>
+  </body>
 </html>
