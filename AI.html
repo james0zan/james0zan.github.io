@@ -55,12 +55,16 @@ or 2) requiring roll-back mechanism, which can hitherto not be fully achieved ef
 Based on it, we implemented a software-only tool to tolerate concurrency bugs on-the-fly.</p>
 <p>The tool will restrict the program's interleaving space, such that it avoids AI-violating (i.e., potentially failure-triggering) interleavings during the production runs.
 Since AI can detect the bugs beforehand, we are able to bypass the suspicious interleavings through stalling, instead of resorting to roll-back.</p>
+<p>Experiments with 35 real-world concurrency bugs demonstrate that AI is capable of detecting and tolerating most types of concurrency bugs, including both atomicity and order violations.</p>
+<p>We also evaluate AI with 6 representative parallel programs.
+Results show that AI incurs negligible overhead (&lt; 1%) for many nontrivial desktop and server applications.
+And its slowdown on computation-intensive programs can be reduced to about 2x after using the bias instrumentation.</p>
 <p>To the best of our knowledge, this is the first attempt to efficiently tolerate previously unknown order and atomicity violations at run time without using rollback.</p>
 </div>
 <div class="section" id="paper">
 <h2>Paper</h2>
 <ul class="simple">
-<li><strong>Mingxing Zhang</strong>, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. <a class="reference external" href="https://drive.google.com/file/d/0B3UfopnW1Nh_cWdmVWlrbE8zaGs/edit?usp=sharing">AI: Lightweight Approach for Tolerating Concurrency Bugs</a>. Submitted for publication</li>
+<li><strong>Mingxing Zhang</strong>, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. <a class="reference external" href="#">AI: Lightweight Approach for Tolerating Concurrency Bugs</a>. Submitted for publication</li>
 </ul>
 </div>
 <div class="section" id="software">
