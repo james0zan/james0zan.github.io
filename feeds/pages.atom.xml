@@ -20,7 +20,7 @@ And its slowdown on computation-intensive programs can be reduced to about 2x af
 &lt;div class="section" id="paper"&gt;
 &lt;h2&gt;Paper&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;strong&gt;Mingxing Zhang&lt;/strong&gt;, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. &lt;a class="reference external" href="#"&gt;AI: Lightweight Approach for Tolerating Concurrency Bugs&lt;/a&gt;. Submitted for publication&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mingxing Zhang&lt;/strong&gt;, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. &lt;a class="reference external" href="https://drive.google.com/file/d/0B3UfopnW1Nh_dlpOUjg4WU1teTA/edit?usp=sharing"&gt;AI: A Lightweight System for Tolerating Concurrency Bugs&lt;/a&gt;. &lt;strong&gt;FSE '14&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="software"&gt;
@@ -36,6 +36,6 @@ And its slowdown on computation-intensive programs can be reduced to about 2x af
 &lt;p&gt;Documentations, screencasts and some auxiliary scripts are also provided.&lt;/p&gt;
 &lt;/div&gt;
 </summary></entry><entry><title>Welcome!</title><link href="http://james0zan.github.io/index.html.html" rel="alternate"></link><updated>2013-04-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2013-04-27:index.html.html</id><summary type="html">&lt;p&gt;Hello, I'm Mingxing Zhang a.k.a. james0zan.&lt;/p&gt;
-&lt;p&gt;Currently, I am a 2nd year Ph.D. student in &lt;a class="reference external" href="http://madsys.cs.tsinghua.edu.cn/en/"&gt;MadSys Group&lt;/a&gt; &amp;#64; Tsinghua University, and my research interests lie in distributed and parallel systems. You can refer to my &lt;a class="reference external" href="http://madsys.cs.tsinghua.edu.cn/~zhangmx/"&gt;homepage&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;Currently, I am a 3rd year Ph.D. student in &lt;a class="reference external" href="http://thu-madsys.github.io/"&gt;MadSys Group&lt;/a&gt; &amp;#64; Tsinghua University, and my research interests lie in distributed and parallel systems. You can refer to my &lt;a class="reference external" href="https://drive.google.com/file/d/0B3UfopnW1Nh_dnlmMUpCWXBzMk0/edit?usp=sharing"&gt;CV&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;p&gt;Thank you for visiting. The blog is &lt;a class="reference external" href="category/blog.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
 </summary></entry></feed>
