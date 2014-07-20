@@ -20,7 +20,7 @@ And its slowdown on computation-intensive programs can be reduced to about 2x af
 &lt;div class="section" id="paper"&gt;
 &lt;h2&gt;Paper&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;strong&gt;Mingxing Zhang&lt;/strong&gt;, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. &lt;a class="reference external" href="https://drive.google.com/file/d/0B3UfopnW1Nh_dlpOUjg4WU1teTA/edit?usp=sharing"&gt;AI: A Lightweight System for Tolerating Concurrency Bugs&lt;/a&gt;. &lt;strong&gt;FSE '14&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mingxing Zhang&lt;/strong&gt;, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. &lt;a class="reference external" href="resource/fse14_zhang.pdf"&gt;AI: A Lightweight System for Tolerating Concurrency Bugs&lt;/a&gt;. &lt;strong&gt;FSE '14&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="software"&gt;
@@ -416,7 +416,7 @@ mixer reduces the likelihood of triggering latent concurrency bugs by attempting
 &lt;/li&gt;
 &lt;/ul&gt;
 </summary><category term="consistency"></category></entry><entry><title>Welcome!</title><link href="http://james0zan.github.io/index.html.html" rel="alternate"></link><updated>2013-04-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2013-04-27:index.html.html</id><summary type="html">&lt;p&gt;Hello, I'm Mingxing Zhang a.k.a. james0zan.&lt;/p&gt;
-&lt;p&gt;Currently, I am a 3rd year Ph.D. student in &lt;a class="reference external" href="http://thu-madsys.github.io/"&gt;MadSys Group&lt;/a&gt; &amp;#64; Tsinghua University, and my research interests lie in distributed and parallel systems. You can refer to my &lt;a class="reference external" href="https://drive.google.com/file/d/0B3UfopnW1Nh_dnlmMUpCWXBzMk0/edit?usp=sharing"&gt;CV&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;Currently, I am a 3rd year Ph.D. student in &lt;a class="reference external" href="http://thu-madsys.github.io/"&gt;MadSys Group&lt;/a&gt; &amp;#64; Tsinghua University, and my research interests lie in distributed and parallel systems. You can refer to my &lt;a class="reference external" href="resource/Resume-ZhangMingxing.pdf"&gt;CV&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;p&gt;Thank you for visiting. The blog is &lt;a class="reference external" href="category/blog.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
 </summary></entry><entry><title>Parallel Merge Sort</title><link href="http://james0zan.github.io/parallel-merge-sort.html" rel="alternate"></link><updated>2013-04-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2013-04-27:parallel-merge-sort.html</id><summary type="html">&lt;p&gt;&lt;em&gt;URL:&lt;/em&gt; &lt;a class="reference external" href="http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/49"&gt;http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/49&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I used to think that the &amp;quot;merge&amp;quot; step of merge sort cannot be efficiently parallelized, because the fact that an element belongs to the tail of one sorted array could not even guarrantee that it won't rank first in the other sorted arrary.&lt;/p&gt;
