@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=endge, chrome=IE8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-    <title>Titleless Sights — Tags </title>
+    <title>Titleless Sights — « Haskell »</title>
     <!--[if lte IE 8]><script type="text/javascript" src="http://james0zan.github.io/theme/js/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/skeleton.css" />
     <link rel="stylesheet" type="text/css" href="http://james0zan.github.io/theme/css/theme.css" />
@@ -13,22 +13,6 @@
     <link rel="alternate" type="application/atom+xml"
                            title="Titleless Sights — Flux Atom"
                            href="http://james0zan.github.io/feeds/atom.xml" />
-
-    <script type="text/javascript" src="http://james0zan.github.io/theme/js/microTags.js"></script>
-    <script>
-      function tag_cloud_init() {
-        var ul = document.getElementById("tag-cloud");
-        window.tagCloud = new microTags(ul, {
-          'min-size': .95,
-          'max-size': 3.5,
-          'min-angle': -8,
-          'max-angle': 8
-        });
-      }
-      if (window.addEventListener) window.addEventListener("load", tag_cloud_init, false);
-      else if (window.attachEvent) window.attachEvent("onload", tag_cloud_init);
-      else window.onload = tag_cloud_init;
-    </script>
   </head>
   <body>
     <div id="page">
@@ -40,28 +24,38 @@
 
       <div id="page-body">
         <section id="page-main" role="main">
-      <h1>Tags</h1>
-      <ul id="tag-cloud">
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/oo.html">OO</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/journaling.html">journaling</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/kqueue.html">kqueue</a></li>
-      <li data-count="2" title="2 article(s)"><a href="http://james0zan.github.io/tag/cache.html">cache</a></li>
-      <li data-count="2" title="2 article(s)"><a href="http://james0zan.github.io/tag/algorithm.html">algorithm</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/epoll.html">epoll</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/monad.html">Monad</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/fm-index.html">FM-index</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/bioinformatics.html">bioinformatics</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/defcon.html">DEFCON</a></li>
-      <li data-count="4" title="4 article(s)"><a href="http://james0zan.github.io/tag/paper.html">paper</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/concurrency-bug.html">concurrency bug</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/base.html">BASE</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/consistency.html">consistency</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/haskell.html">Haskell</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/cap.html">CAP</a></li>
-      <li data-count="1" title="1 article(s)"><a href="http://james0zan.github.io/tag/replica.html">replica</a></li>
-      <li data-count="2" title="2 article(s)"><a href="http://james0zan.github.io/tag/parallel.html">parallel</a></li>
-      </ul>
-      </section> <!-- /#page-main -->
+      <h1 class="small-title">« Haskell » :</h1>
+
+      <article class="post">
+        <header class="post-header">
+          <h1>
+            <a rel="bookmark"
+               href="http://james0zan.github.io/steps-of-learning-monad.html"
+               title="Lien permanent vers «Steps of learning Monad»">
+               Steps of learning Monad
+            </a>
+          </h1>
+          <div class="meta">
+<!-- includes/article_meta.html -->
+            On <time datetime="2015-02-19T00:00:00">Gio 19 Febbraio 2015</time>
+            in <em><a href="http://james0zan.github.io/category/bookmark.html">Bookmark</a></em>
+            by <a href="http://james0zan.github.io/author/mingxing-zhang.html">Mingxing Zhang</a>              <br />Tags:              <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/monad.html">Monad</a></span>,               <span  class="tag"><a rel="tag" href="http://james0zan.github.io/tag/haskell.html">Haskell</a></span>          </div>
+        </header>
+        <div class="post-content">
+          <p>Step 1: Randomly pick up a handbook or tutorial and get confused or even misled.</p>
+<p>Step 2: Read <a class="reference external" href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html">Functors, Applicatives, And Monads In Pictures</a> to get a sense of how monad is analogue with a box/container.</p>
+<p>Step 3: Read <a class="reference external" href="http://jelv.is/blog/Haskell-Monads-and-Purity/">Haskell, Monads and Purity</a> for truly understanding the essence of monad -- &quot;separates evaluation and execution&quot;.</p>
+
+        </div>
+
+
+      </article>
+      <nav id="pagination">   <!-- <span id="first_page" class="a inactive">&#60;&#60;</span>
+        <span id="first_page" class="a inactive">&#60;</span> -->
+        <span class="a active">1</span>
+   <!-- <span id="next_page" class="a inactive">&#62;</span>
+        <span id="next_page" class="a inactive">&#62;&#62;</span> -->
+</nav>      </section> <!-- /#page-main -->
 
         <aside id="page-side">
           <!-- begin includes/sidebar.html -->
