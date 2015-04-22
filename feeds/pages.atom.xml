@@ -36,8 +36,10 @@ And its slowdown on computation-intensive programs can be reduced to about 2x af
 &lt;p&gt;Documentations, screencasts and some auxiliary scripts are also provided.&lt;/p&gt;
 &lt;/div&gt;
 </summary></entry><entry><title>Welcome!</title><link href="http://james0zan.github.io/index.html.html" rel="alternate"></link><updated>2013-04-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2013-04-27:index.html.html</id><summary type="html">&lt;p&gt;Hello, I'm Mingxing Zhang a.k.a. james0zan.&lt;/p&gt;
-&lt;p&gt;Currently, I am a 3rd year Ph.D. student in &lt;a class="reference external" href="http://thu-madsys.github.io/"&gt;MadSys Group&lt;/a&gt; &amp;#64; Tsinghua University, and my research interests lie in distributed and parallel systems. You can refer to my &lt;a class="reference external" href="resource/Resume-ZhangMingxing.pdf"&gt;CV&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;p&gt;Thank you for visiting. The blog is &lt;a class="reference external" href="category/blog.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Currently, I am a 3rd year Ph.D. student at the &lt;a class="reference external" href="http://thu-madsys.github.io/"&gt;MadSys Group&lt;/a&gt; of Tsinghua.
+I'm interested in building efficient and reliable parallel systems.
+You can refer to my &lt;a class="reference external" href="resource/Resume-ZhangMingxing.pdf"&gt;CV&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;Thank you for the visiting. The blog is &lt;a class="reference external" href="category/blog.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="section" id="news"&gt;
 &lt;h2&gt;News&lt;/h2&gt;
 &lt;ul class="simple"&gt;
