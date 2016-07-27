@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Titleless Sights</title><link href="http://james0zan.github.io/" rel="alternate"></link><link href="http://james0zan.github.io/feeds/pages.atom.xml" rel="self"></link><id>http://james0zan.github.io/</id><updated>2014-03-03T00:00:00+08:00</updated><entry><title>Anticipating Invariant</title><link href="http://james0zan.github.io/AI.html.html" rel="alternate"></link><updated>2014-03-03T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2014-03-03:AI.html.html</id><summary type="html">&lt;div class="section" id="ai-in-brief"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Titleless Sights</title><link href="http://james0zan.github.io/" rel="alternate"></link><link href="http://james0zan.github.io/feeds/pages.atom.xml" rel="self"></link><id>http://james0zan.github.io/</id><updated>2016-07-27T00:00:00+08:00</updated><entry><title>Welcome!</title><link href="http://james0zan.github.io/index.html.html" rel="alternate"></link><updated>2016-07-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2016-07-27:index.html.html</id><summary type="html">&lt;p&gt;Hello, I'm ZHANG, Mingxing a.k.a. james0zan.&lt;/p&gt;
+&lt;p&gt;Currently, I am a 5th year Ph.D. student at the &lt;a class="reference external" href="http://madsys.cs.tsinghua.edu.cn/"&gt;MadSys Group&lt;/a&gt; of Tsinghua.
+I'm interested in building efficient and reliable parallel systems.
+You can refer to my &lt;a class="reference external" href="resource/Resume-ZHANGMingxing.pdf"&gt;CV&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;Thank you for the visiting. The blog is &lt;a class="reference external" href="category/blog.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="section" id="news"&gt;
+&lt;h2&gt;News&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Our paper &lt;a class="reference external" href="#"&gt;Measuring and Optimizing Distributed Array Programs&lt;/a&gt; is accepted by &lt;a class="reference external" href="http://vldb2016.persistent.com/"&gt;VLDB 2016&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Our paper &lt;a class="reference external" href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;amp;arnumber=7412768"&gt;A Lightweight System for Detecting and Tolerating Concurrency Bugs&lt;/a&gt; is accepted by &lt;a class="reference external" href="https://www.computer.org/web/tse"&gt;IEEE Transactions on Software Engineering 2016&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Our paper &lt;a class="reference external" href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;amp;arnumber=7349596"&gt;What is Wrong With the Transmission? - A Comprehensive Study on Message Passing Related Bugs&lt;/a&gt; is accepted by &lt;a class="reference external" href="http://icpp2015.tsinghua.edu.cn/"&gt;ICPP 2015&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Our paper &lt;a class="reference external" href="resource/fse14_zhang.pdf"&gt;AI: A Lightweight System for Tolerating Concurrency Bugs&lt;/a&gt; won &lt;a class="reference external" href="http://fse22.gatech.edu/dpa"&gt;ACM SIGSOFT Distinguished Paper Award&lt;/a&gt; at &lt;a class="reference external" href="http://fse22.gatech.edu"&gt;FSE 2014&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Anticipating Invariant</title><link href="http://james0zan.github.io/AI.html.html" rel="alternate"></link><updated>2014-03-03T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2014-03-03:AI.html.html</id><summary type="html">&lt;div class="section" id="ai-in-brief"&gt;
 &lt;h2&gt;AI in Brief&lt;/h2&gt;
 &lt;p&gt;Concurrency bugs (CBugs) are notoriously difficult to be eradicated in the testing phase because of their non-deterministic nature,
 and the bug fixing procedure is also time-consuming and error-prone.&lt;/p&gt;
@@ -20,6 +34,7 @@ And its slowdown on computation-intensive programs can be reduced to about 2x af
 &lt;div class="section" id="paper"&gt;
 &lt;h2&gt;Paper&lt;/h2&gt;
 &lt;ul class="simple"&gt;
+&lt;li&gt;&lt;strong&gt;Mingxing Zhang&lt;/strong&gt;, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. &lt;a class="reference external" href="http://ieeexplore.ieee.org/xpl/login.jsp?tp=&amp;amp;arnumber=7412768"&gt;A Lightweight System for Detecting and Tolerating Concurrency Bugs&lt;/a&gt;. &lt;strong&gt;TSE 2016&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Mingxing Zhang&lt;/strong&gt;, Yongwei Wu, Shan Lu, Shanxiang Qi, Jinglei Ren and Weimin Zheng. &lt;a class="reference external" href="resource/fse14_zhang.pdf"&gt;AI: A Lightweight System for Tolerating Concurrency Bugs&lt;/a&gt;. &lt;strong&gt;FSE '14&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;a href="http://fse22.gatech.edu/dpa"&gt;&lt;font color="maroon"&gt;&lt;span style="display:inline-block; width: 40px;"&gt;&lt;/span&gt;Won SIGSOFT Distinguished Paper Award&lt;/font&gt;&lt;/a&gt;&lt;/div&gt;
@@ -34,16 +49,5 @@ And its slowdown on computation-intensive programs can be reduced to about 2x af
 &lt;li&gt;an example of the APIs' usage.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Documentations, screencasts and some auxiliary scripts are also provided.&lt;/p&gt;
-&lt;/div&gt;
-</summary></entry><entry><title>Welcome!</title><link href="http://james0zan.github.io/index.html.html" rel="alternate"></link><updated>2013-04-27T00:00:00+08:00</updated><author><name>Mingxing Zhang</name></author><id>tag:james0zan.github.io,2013-04-27:index.html.html</id><summary type="html">&lt;p&gt;Hello, I'm Mingxing Zhang a.k.a. james0zan.&lt;/p&gt;
-&lt;p&gt;Currently, I am a 3rd year Ph.D. student at the &lt;a class="reference external" href="http://thu-madsys.github.io/"&gt;MadSys Group&lt;/a&gt; of Tsinghua.
-I'm interested in building efficient and reliable parallel systems.
-You can refer to my &lt;a class="reference external" href="resource/Resume-ZhangMingxing.pdf"&gt;CV&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;p&gt;Thank you for the visiting. The blog is &lt;a class="reference external" href="category/blog.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="section" id="news"&gt;
-&lt;h2&gt;News&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;Our paper &lt;a class="reference external" href="resource/fse14_zhang.pdf"&gt;AI: A Lightweight System for Tolerating Concurrency Bugs&lt;/a&gt; won &lt;a class="reference external" href="http://fse22.gatech.edu/dpa"&gt;ACM SIGSOFT Distinguished Paper Award&lt;/a&gt; at &lt;a class="reference external" href="http://fse22.gatech.edu"&gt;FSE 2014&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;
 </summary></entry></feed>
